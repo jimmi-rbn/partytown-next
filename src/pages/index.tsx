@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Script from "next/script";
+import { Partytown } from "@builder.io/partytown/react";
 
 export default function Home() {
   return (
@@ -10,9 +11,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Script
-        id="consentCheck"
-        strategy="worker"
+      <Partytown debug={true} forward={["dataLayer.push"]} />
+      <script
+        id="gtm"
+        type="text/partytown"
         dangerouslySetInnerHTML={{
           __html: `
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -22,6 +24,7 @@ export default function Home() {
           `,
         }}
       />
+
       {/* <Script
         strategy="worker"
         id="CookieConsent"
