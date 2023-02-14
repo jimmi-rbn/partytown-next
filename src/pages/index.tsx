@@ -22,13 +22,13 @@ export default function Home() {
           `,
         }}
       />
-      <Script
+      {/* <Script
         strategy="worker"
         id="CookieConsent"
         src="/cookieinformation.js"
         data-culture="EN"
         type="text/javascript"
-      ></Script>
+      ></Script> */}
       <main>Partytown next</main>
     </>
   );
