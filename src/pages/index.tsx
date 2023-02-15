@@ -601,7 +601,8 @@ export default function Home() {
                       return document.getElementById(Re)
                   }
                   function oe() {
-                      return Me(window.location.hostname.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split("/")[0])
+                    var regex = /^(?:https?:\/\/)?(?:www\.)?/i;
+                      return Me(window.location.hostname.replace(regex, "").split("/")[0])
                   }
                   function ie() {
                       var e, t;
@@ -638,9 +639,10 @@ export default function Home() {
                           return "true" === (e = k.getAttribute("data-tealium-enabled")) || null == e
                   }
                   function ue() {
+                    var regex = /^(?:https?:\/\/)?(?:www\.)?/i;
                       var e;
                       return null !== k && k.getAttribute("cs-id") ? (e = k.getAttribute("cs-id"),
-                      _.cdnUrl + "/" + _.version + "/" + e + "/" + i() + ".js") : "localhost" === window.location.hostname ? "http://localhost:8085/banner-contract.js" : (e = Me(e = window.location.hostname.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split("/")[0]),
+                      _.cdnUrl + "/" + _.version + "/" + e + "/" + i() + ".js") : "localhost" === window.location.hostname ? "http://localhost:8085/banner-contract.js" : (e = Me(e = window.location.hostname.replace(regex, "").split("/")[0]),
                       _.cdnUrl + "/" + _.version + "/" + e + "/" + i() + ".js")
                   }
                   function de() {
