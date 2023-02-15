@@ -12,12 +12,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
 
         <Partytown debug={true} forward={["dataLayer.push"]} />
-        {/* <script
+        <script
           type="text/partytown"
           id="CookieConsent"
           src="/cookieinformation.js"
           data-culture="EN"
-        ></script> */}
+        ></script>
         <script
           id="gtm"
           type="text/partytown"
