@@ -11,7 +11,23 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
 
-        <Partytown debug={true} forward={["dataLayer.push"]} />
+        <Partytown
+          debug={true}
+          forward={[
+            "dataLayer.push",
+            "utag_data",
+            "CookieInformation",
+            "__cmp",
+            "frames",
+            "__tcfapi",
+            "cicc",
+            "disableCookiesAutoblockingForScanner",
+            "cicl",
+            "cookieInformationCustomConfig",
+            "CookieInformationScriptLoaded",
+            "CookieConsent",
+          ]}
+        />
         <script
           type="text/partytown"
           id="CookieConsent"
