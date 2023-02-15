@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Script from "next/script";
 import { Partytown } from "@builder.io/partytown/react";
 
 export default function Home() {
@@ -601,7 +600,7 @@ export default function Home() {
                       return document.getElementById(Re)
                   }
                   function oe() {
-                    var regex = /^(?:https?:\/\/)?(?:www\.)?/i;
+                    var regex = new RegExp(/^(?:https?:\/\/)?(?:www\.)?/i);
                       return Me(window.location.hostname.replace(regex, "").split("/")[0])
                   }
                   function ie() {
@@ -639,7 +638,7 @@ export default function Home() {
                           return "true" === (e = k.getAttribute("data-tealium-enabled")) || null == e
                   }
                   function ue() {
-                    var regex = /^(?:https?:\/\/)?(?:www\.)?/i;
+                    var regex = new RegExp(/^(?:https?:\/\/)?(?:www\.)?/i);
                       var e;
                       return null !== k && k.getAttribute("cs-id") ? (e = k.getAttribute("cs-id"),
                       _.cdnUrl + "/" + _.version + "/" + e + "/" + i() + ".js") : "localhost" === window.location.hostname ? "http://localhost:8085/banner-contract.js" : (e = Me(e = window.location.hostname.replace(regex, "").split("/")[0]),
