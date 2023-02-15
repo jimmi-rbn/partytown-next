@@ -40,7 +40,1472 @@ export default function Home() {
           data-culture="EN"
           dangerouslySetInnerHTML={{
             __html: `
-            !function o(i,r,a){function c(t,e){if(!r[t]){if(!i[t]){var n="function"==typeof require&&require;if(!e&&n)return n(t,!0);if(s)return s(t,!0);throw(e=new Error("Cannot find module '"+t+"'")).code="MODULE_NOT_FOUND",e}n=r[t]={exports:{}},i[t][0].call(n.exports,function(e){return c(i[t][1][e]||e)},n,n.exports,o,i,r,a)}return r[t].exports}for(var s="function"==typeof require&&require,e=0;e<a.length;e++)c(a[e]);return c}({1:[function(e,t,n){"use strict";function a(e){return(a="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function o(){for(var e,o,i=[],r=window,t=r;t;){try{if(t.frames.__tcfapiLocator){e=t;break}}catch(e){}if(t===r.top)break;t=t.parent}e||(function e(){var t,n=r.document,o=!!r.frames.__tcfapiLocator;return o||(n.body?((t=n.createElement("iframe")).style.cssText="display:none",t.name="__tcfapiLocator",n.body.appendChild(t)):setTimeout(e,5)),!o}(),r.__tcfapi=function(){for(var e=arguments.length,t=new Array(e),n=0;n<e;n++)t[n]=arguments[n];if(!t.length)return i;"setGdprApplies"===t[0]?3<t.length&&2===parseInt(t[1],10)&&"boolean"==typeof t[3]&&(o=t[3],"function"==typeof t[2])&&t[2]("set",!0):"ping"===t[0]?"function"==typeof t[2]&&t[2]({gdprApplies:o,cmpLoaded:!1,cmpStatus:"stub"}):i.push(t)},r.addEventListener("message",function(n){var o="string"==typeof n.data,e={};if(o)try{e=JSON.parse(n.data)}catch(n){}else e=n.data;var i="object"===a(e)?e.__tcfapiCall:null;i&&window.__tcfapi(i.command,i.version,function(e,t){e={__tcfapiReturn:{returnValue:e,success:t,callId:i.callId}};n&&n.source&&n.source.postMessage&&n.source.postMessage(o?JSON.stringify(e):e,"*")},i.parameter)},!1))}void 0!==t?t.exports=o:o()},{}],2:[function(e,T,S){!function(A){!function(){var e=this,t="object"==typeof S&&S&&!S.nodeType&&S,n="object"==typeof T&&T&&!T.nodeType&&T,o="object"==typeof A&&A;o.global!==o&&o.window!==o&&o.self!==o||(e=o);var i,r,g=2147483647,y=36,h=26,a=38,c=700,s=/^xn--/,u=/[^\x20-\x7E]/,d=/[\x2E\u3002\uFF0E\uFF61]/g,l={overflow:"Overflow: input needs wider integers to process","not-basic":"Illegal input >= 0x80 (not a basic code point)","invalid-input":"Invalid input"},f=y-1,C=Math.floor,b=String.fromCharCode;function v(e){throw new RangeError(l[e])}function p(e,t){for(var n=e.length,o=[];n--;)o[n]=t(e[n]);return o}function m(e,t){var n=e.split("@"),o="",n=(1<n.length&&(o=n[0]+"@",e=n[1]),(e=e.replace(d,".")).split("."));return o+p(n,t).join(".")}function _(e){for(var t,n,o=[],i=0,r=e.length;i<r;)55296<=(t=e.charCodeAt(i++))&&t<=56319&&i<r?56320==(64512&(n=e.charCodeAt(i++)))?o.push(((1023&t)<<10)+(1023&n)+65536):(o.push(t),i--):o.push(t);return o}function w(e){return p(e,function(e){var t="";return 65535<e&&(t+=b((e-=65536)>>>10&1023|55296),e=56320|1023&e),t+=b(e)}).join("")}function k(e,t){return e+22+75*(e<26)-((0!=t)<<5)}function I(e,t,n){var o=0;for(e=n?C(e/c):e>>1,e+=C(e/t);f*h>>1<e;o+=y)e=C(e/f);return C(o+(f+1)*e/(e+a))}function E(e){var t,n,o,i,r,a,c,s=[],u=e.length,d=0,l=128,f=72,p=e.lastIndexOf("-");for(p<0&&(p=0),n=0;n<p;++n)128<=e.charCodeAt(n)&&v("not-basic"),s.push(e.charCodeAt(n));for(o=0<p?p+1:0;o<u;){for(i=d,r=1,a=y;u<=o&&v("invalid-input"),c=e.charCodeAt(o++),(y<=(c=c-48<10?c-22:c-65<26?c-65:c-97<26?c-97:y)||c>C((g-d)/r))&&v("overflow"),d+=c*r,!(c<(c=a<=f?1:f+h<=a?h:a-f));a+=y)r>C(g/(c=y-c))&&v("overflow"),r*=c;f=I(d-i,t=s.length+1,0==i),C(d/t)>g-l&&v("overflow"),l+=C(d/t),d%=t,s.splice(d++,0,l)}return w(s)}function x(e){for(var t,n,o,i,r,a,c,s,u,d,l=[],f=(e=_(e)).length,p=128,m=72,w=t=0;w<f;++w)(c=e[w])<128&&l.push(b(c));for(n=o=l.length,o&&l.push("-");n<f;){for(i=g,w=0;w<f;++w)p<=(c=e[w])&&c<i&&(i=c);for(i-p>C((g-t)/(s=n+1))&&v("overflow"),t+=(i-p)*s,p=i,w=0;w<f;++w)if((c=e[w])<p&&++t>g&&v("overflow"),c==p){for(r=t,a=y;!(r<(u=a<=m?1:m+h<=a?h:a-m));a+=y)l.push(b(k(u+(d=r-u)%(u=y-u),0))),r=C(d/u);l.push(b(k(r,0))),m=I(t,s,n==o),t=0,++n}++t,++p}return l.join("")}if(i={version:"1.4.1",ucs2:{decode:_,encode:w},decode:E,encode:x,toASCII:function(e){return m(e,function(e){return u.test(e)?"xn--"+x(e):e})},toUnicode:function(e){return m(e,function(e){return s.test(e)?E(e.slice(4).toLowerCase()):e})}},"function"==typeof define&&"object"==typeof define.amd&&define.amd)define("punycode",function(){return i});else if(t&&n)if(T.exports==t)n.exports=i;else for(r in i)i.hasOwnProperty(r)&&(t[r]=i[r]);else e.punycode=i}.call(this)}.call(this,"undefined"!=typeof global?global:"undefined"!=typeof self?self:"undefined"!=typeof window?window:{})},{}],3:[function(e,t,n){t.exports=function(){"use strict";function e(n){var o,i="string"==typeof n.data;try{var e=i?JSON.parse(n.data):n.data}catch(e){return}e.__cmpCall&&(o=e.__cmpCall,window.__cmp(o.command,o.parameter,function(e,t){e={__cmpReturn:{returnValue:e,success:t,callId:o.callId}};n.source.postMessage(i?JSON.stringify(e):e,"*")}))}!function e(){var t,n;window.frames.__cmpLocator||(document.body?(t=document.body,(n=document.createElement("iframe")).style.cssText="display:none",n.name="__cmpLocator",n.title="IAB consent manager",t.appendChild(n)):setTimeout(e,5))}(),"function"!=typeof window.__cmp&&(window.__cmp=function(){var e=arguments;if(window.__cmp.a=window.__cmp.a||[],!e.length)return window.__cmp.a;"ping"===e[0]?e[2]({gdprAppliesGlobally:!1,cmpLoaded:!1},!0):window.__cmp.a.push([].slice.apply(e))},window.__cmp.msgHandler=e,window.addEventListener?window.addEventListener("message",e,!1):window.attachEvent("onmessage",e))}},{}],4:[function(e,t,n){t.exports={cdnUrl:"https://policy.app.cookieinformation.com",version:"ee87f3",mainEndpoint:"https://consent.app.cookieinformation.com",apiPrefix:"/api",consentAcceptanceEndpoint:"/consent",IABendpoint:"https://vendorlist.consensu.org",IABLibraryFileName:"cmp.js",cmpId:"162",cmpVersion:"1",cookieInformationIABCdnUrl:"https://cookieinformation.mgr.consensu.org",cookieInformationTCFCdnUrl:"https://policy.app.cookieinformation.com",cookieInformationIABWebpageFileName:"iabiframe.html",cookieInformationTCFLibraryIframe:"tcfcmpiframe.html",cookieInformationTCFLibraryScript:"tcf-cmp.js",cookieSharingWebpageFileName:"cookiesharingiframe.html",pathToPubVendors:"/.well-known/pubvendors.json",googleConsentModeDeveloperId:"developer_id.dNmIyNz"}},{}],5:[function(n,F,U){"use strict";function D(e,t){t=t||{bubbles:!1,cancelable:!1,detail:null};var n=document.createEvent("CustomEvent");return n.initCustomEvent(e,t.bubbles,t.cancelable,t.detail),n}function P(e){return-1!==e.indexOf("youtube")||-1!==e.indexOf("vimeo")}function G(e,t,n){if(window.CookieInformation.enableYoutubeNotVisibleDescription)if(window.CookieInformation.getConsentGivenFor(e))for(var o=document.getElementsByClassName("cookieinformation-yt-element"),i=[].slice.call(o),r=0;r<i.length;++r)i[r].remove();else if(!window.CookieInformation.getConsentGivenFor(e))for(var a,c=document.getElementsByTagName("iframe"),s="",u=0;u<c.length;++u)c[u].getAttribute("data-consent-src")&&c[u].getAttribute("data-category-consent")===e&&P(s=c[u].getAttribute("data-consent-src").toLowerCase())&&!document.getElementById("cookieinformation-"+s)&&((a=document.createElement("div")).setAttribute("id","cookieinformation-"+s),a.setAttribute("class",n+" cookieinformation-yt-element"),a.setAttribute("style","cursor:pointer;"),a.setAttribute("onclick","javascript:CookieConsent.renew();"),a.innerHTML=t,c[u].parentNode.insertBefore(a,c[u].nextSibling),X(c[u]))}function W(e){if(window.utag_data=window.utag_data||{},window.utag=window.utag||{},e.consents_approved){window.utag_data.cookie_information_categories=window.utag_data.cookie_information_categories||[];for(var t=e.consents_approved.length,n=0;n<t;n++)window.utag_data.cookie_information_categories.push(e.consents_approved[n]);window.utag.view&&"[object Function]"==={}.toString.call(window.utag.view)&&window.utag.view({cookie_information_categories:e.consents_approved})}}function R(){return!(!!k&&"false"===k.getAttribute("data-gcm-enabled"))}function q(e){var t,n,o,i;void 0!==e&&r(e.consents_approved)&&(t=-1!==e.consents_approved.indexOf("cookie_cat_marketing")?"granted":"denied",n=-1!==e.consents_approved.indexOf("cookie_cat_statistic")?"granted":"denied",i=o=-1!==e.consents_approved.indexOf("cookie_cat_functional")?"granted":"denied",e=-1!==e.consents_approved.indexOf("cookie_cat_necessary")?"granted":"denied",window.gtag)&&"[object Function]"==={}.toString.call(window.gtag)&&(window.gtag("consent","update",{ad_storage:t,analytics_storage:n,functionality_storage:o,personalization_storage:i,security_storage:e,wait_for_update:500}),"denied"==t&&window.gtag("set","ads_data_redaction",!0),window.gtag("set",_.googleConsentModeDeveloperId,!0))}function J(e){window.dataLayer=window.dataLayer||[];var t=r(window.dataLayer);if(e.consents_approved&&t)for(var n=e.consents_approved.length,o=0;o<n;o++)window.dataLayer.push({event:e.consents_approved[o]});R()&&q(e)}function f(e,t){e=!t&&JSON.stringify(e)||p(T);try{e=JSON.parse(e)}catch(e){console.log("An error occurred while parsing consent cookie to get approved categories",e)}!0!==t&&(J(e),se())&&W(e),e&&(e.consents_approved=e.consents_approved||[],e.consents_denied=e.consents_denied||[],e.consents_approved.forEach(function(e){"true"!==e&&"false"!==e&&(window.cicc[e]=!0)}),e.consents_denied.forEach(function(e){"true"!==e&&"false"!==e&&(window.cicc[e]=!1)})),m()}function V(e,t,n,o,i,r,a){var c=document.createElement("iframe");if(c.name=e||"",c.src=t||"",c.title=n||"",c.style.cssText=o||"",a&&(c.id=a),i)try{return i.parentNode.insertBefore(c,i.nextSibling),window.addEventListener("message",y,!1),c.onload=r,!0}catch(e){return console.log("CookieInformation: There was an error while adding iframe into webpage. Error reason: "+e),!1}}function H(){for(var e=document.getElementsByTagName("script"),t=null,n=0;n<e.length;++n)if(e[n].getAttribute("src")){if(-1!==(t=e[n].getAttribute("src").toLowerCase()).indexOf("/uc.js")&&-1!==t.indexOf("cookieinformation"))return e[n];if("CookieConsent"===e[n].getAttribute("id"))return e[n]}return null}function z(e){if(!e)return console.log("CookieInformation: lack of data-consent-src attribute or incorrect value has been passed.Please update it accordingly to the documentation"),!1;var t="consent-cmp-file",n=document.getElementById(t),n=(n&&n.remove(),document.createElement("script"));n.type="text/javascript",n.async=!1,n.src=e,n.id=t,n.charset="UTF-8";try{return document.body.appendChild(n),!0}catch(e){return console.log("CookieInformation: there was an error while injecting script into webpage. Error reason: "+e),!1}}function X(e){e.style.display="none"}function Q(e,t,n){if(!e)return console.log("CookieInformation: lack of data-consent-src attribute or incorrect value has been passed.Please update it accordingly to the documentation"),!1;var o=document.createElement("script"),i=[];null!=n&&null!=n.attributes&&(n.setAttribute("src",e),i=[].slice.call(n.attributes));for(var r=0;r<i.length;++r)o.setAttribute(i[r].name,i[r].value);o.setAttribute("data-category-consent",t),o.setAttribute("data-consent-src",e),o.setAttribute("src",e);try{return n.parentNode.insertBefore(o,n.nextSibling),!0}catch(e){return console.log("CookieInformation: there was an error while injecting script into webpage. Error reason: "+e),!1}}function K(e,t,n){if(!e)return console.log("CookieInformation: lack of data-consent-src attribute or incorrect value has been passed.Please update it accordingly to the documentation"),!1;var o=document.createElement("IMG"),i=[];null!=n&&null!=n.attributes&&(n.setAttribute("src",e),i=[].slice.call(n.attributes));for(var r=0;r<i.length;++r)("style"!==i[r].name||-1===i[r].value.indexOf("display: none")&&-1===i[r].value.indexOf("display:none"))&&o.setAttribute(i[r].name,i[r].value);o.setAttribute("data-category-consent",t),o.setAttribute("data-consent-src",e),o.setAttribute("src",e);try{return n.parentNode.insertBefore(o,n.nextSibling),!0}catch(e){return console.log("CookieInformation: there was an error while injecting image into webpage. Error reason: "+e),!1}}function Y(e,t,n){if(!e)return console.log("CookieInformation: lack of data-consent-src attribute or incorrect value has been passed.Please update it accordingly to the documentation"),!1;var o=document.createElement("IFRAME"),i=[];null!=n&&null!=n.attributes&&(n.setAttribute("src",e),i=[].slice.call(n.attributes));for(var r=0;r<i.length;++r)("style"!==i[r].name||-1===i[r].value.indexOf("display: none")&&-1===i[r].value.indexOf("display:none"))&&o.setAttribute(i[r].name,i[r].value);o.setAttribute("data-category-consent",t),o.setAttribute("data-consent-src",e),o.setAttribute("src",e);try{return n.parentNode.insertBefore(o,n.nextSibling),!0}catch(e){return console.log("CookieInformation: there was an error while injecting iframe into webpage. Error reason: "+e),!1}}function Z(){for(var e=v.prototype.slice.call(document.querySelectorAll("[data-category-consent]")),t=0;t<e.length;++t){var n,o=e[t].getAttribute("data-category-consent");window.cicc[o]?(n=e[t].getAttribute("data-consent-src"),"SCRIPT"===e[t].tagName?(Q(n,o,e[t]),e[t].remove()):"IMG"===e[t].tagName?(K(n,o,e[t]),e[t].remove()):"IFRAME"===e[t].tagName&&(Y(n,o,e[t]),e[t].remove())):X(e[t])}}function o(e,t,n){if(n?document.getElementById(n):document.getElementsByName(e)[0])return document.getElementsByTagName("body")[0].appendChild(t),!0;1e3<++Ve?document.getElementsByTagName("body")[0].appendChild(t):setTimeout(function(){o(e,t,n)},5)}function $(e){return!!e&&"true"===e.getAttribute("data-tcf-v2-enabled")}function ee(){var e=0<arguments.length&&void 0!==arguments[0]?arguments[0]:"2";return"1"===e?_.cookieInformationIABCdnUrl+"/"+_.IABLibraryFileName:"2"===e?_.cookieInformationTCFCdnUrl+"/"+_.cookieInformationTCFLibraryScript:void 0}function e(){k=H();var e="consent-file",t=document.getElementById(e),t=(t&&t.remove(),document.createElement("script"));t.type="text/javascript",t.async=!0,t.setAttribute("id",e),t.src=ue(),t.charset="UTF-8",$(k)?(he("2"),o("__tcfapiLocator",t,"CookieInformationCmpIframe")):ce()?(he("1"),o("__cmpLocator",t)):document.getElementsByTagName("body")[0].appendChild(t),ie()}function te(){var e,t;He||window.disableCookiesAutoblockingForScanner||(He=!0,e=n("./cookie-autoblocking-module-es3"),t=oe(),e.initializeCookieAutoBlocking(t))}function ne(){return document.getElementById(Re)}function oe(){return Me(window.location.hostname.replace(/^(?:https?:\/\/)?(?:www\.)?/i,"").split("/")[0])}function ie(){var e,t;null!=ne()&&(t="cookie-information-categories-consent",(e=document.getElementById(t))&&e.remove(),(e=document.createElement("script")).type="text/javascript",e.async=!0,e.setAttribute("id",t),e.src="localhost"===window.location.hostname?"http://localhost:8085/categories-contract.js":(t=oe(),_.cdnUrl+"/"+_.version+"/"+t+"/categories-"+i()+".js"),e.charset="UTF-8",document.body.appendChild(e))}function i(){return null!=k&&k.getAttribute("data-culture")&&k.getAttribute("data-culture").replace(/â€œ|â€|â€ž/g,"").toLowerCase()||"default"}function re(){try{return!(null==k||!k.nonce)&&k.nonce}catch(e){return!1}}function ae(e){var t="en";return void 0===e[t=null!=k&&k.getAttribute("data-culture")?k.getAttribute("data-culture").replace(/â€œ|â€|â€ž/g,"").toLowerCase()||"en":t]?t:e[t].toLowerCase()}function ce(){return k&&"true"===k.getAttribute("data-iab-enabled")}function se(){var e;if(null!=k)return"true"===(e=k.getAttribute("data-tealium-enabled"))||null==e}function ue(){var e;return null!==k&&k.getAttribute("cs-id")?(e=k.getAttribute("cs-id"),_.cdnUrl+"/"+_.version+"/"+e+"/"+i()+".js"):"localhost"===window.location.hostname?"http://localhost:8085/banner-contract.js":(e=Me(e=window.location.hostname.replace(/^(?:https?:\/\/)?(?:www\.)?/i,"").split("/")[0]),_.cdnUrl+"/"+_.version+"/"+e+"/"+i()+".js")}function de(){return"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,function(e){var t=16*Math.random()|0;return("x"==e?t:3&t|8).toString(16)})}function p(e){e=document.cookie.match(new RegExp(e+"=([^;]+)"));return!!e&&Ce(e[1])}function le(){var e=p(T);if(!e)return!1;try{e=JSON.parse(e)}catch(e){console.log("An error occurred while trying to parse cookie value to get visitor id",e)}return e.user_uid||!1}function c(e){e=e.split(".");return e.shift(),"."+e.join(".")}function fe(e,t,n){var n="expires="+n,o="",o=t===Object(t)?JSON.stringify(t):t;"http:"===window.location.protocol||"http"===window.location.protocol?document.cookie=e+"="+a(o)+"; "+n+"; path=/; SameSite=Lax;":"https:"===window.location.protocol||"https"===window.location.protocol?document.cookie=e+"="+a(o)+"; "+n+"; path=/; SameSite=Lax; secure":document.cookie=e+"="+a(o)+"; "+n+"; path=/"}function s(e,t){t?(document.cookie=e+"=; Path=/; Domain="+t+"; Expires=Thu, 01 Jan 1970 00:00:01 GMT;",document.cookie=e+"=; Path=/; Domain="+t+"; Expires=Thu, 01 Jan 1970 00:00:01 GMT; secure"):(document.cookie=e+"=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;",document.cookie=e+"=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT; secure")}function pe(e){return!1===e||!0===e}function me(e,t){var n;return!1===r(t)||!1===r(e)?[]:(n=[],e.forEach(function(e){-1!==t.indexOf(e.attributes.name.value)&&n.push(e)}),n)}function m(){me(v.prototype.slice.call(document.querySelectorAll('input[name][type="checkbox"]:not([name=""])')),window.cicl).forEach(function(e){e.checked=!!window.cicc[e.attributes.name.value]})}function we(e){var t,n=[];for(t in e)!e.hasOwnProperty(t)||e[t]||n.push(t);return n}function ge(e){var t,n=[];for(t in e)e.hasOwnProperty(t)&&e[t]&&n.push(t);return n}function r(e){return e&&"[object Array]"===Object.prototype.toString.call(e)}function ye(e){var t={};return e.forEach(function(e){t[e]=!0}),t}function w(e){var t={};return e.forEach(function(e){t[e]=!1}),t[O]=!0,t}function he(){var e=0<arguments.length&&void 0!==arguments[0]?arguments[0]:"2",t="";"1"===e?(Ue(),t=ee("1")):"2"===e&&(Pe(),t=ee("2")),z(t)}function Ce(e){return decodeURIComponent(e).replace(/%28/g,"(").replace(/%29/g,")")}function a(e){return encodeURIComponent(e).replace(/[()]/g,function(e){return"%"+e.charCodeAt(0).toString(16)})}function be(e,t){return!!t.website_uuid&&t.website_uuid!==e}function ve(e){return!!e&&"Invalid Date"!==new Date(e)&&!isNaN(new Date(e))}function u(e){return"number"==typeof e&&e%1==0}function _e(e){return"string"==typeof e||e instanceof String}function d(e,t){return!(!ve(e)||!u(t))&&((e=new Date(e)).setTime(e.getTime()+24*t*60*60*1e3),e.toUTCString())}function ke(e,t,n,o,i){if(Be(qe,Je),!(e||t||p(S)))return h(o),null;if(t&&!e){var r=l(t.consents_approved,window.cicl);Se(i,t,d(t.timestamp,r),A,x);try{C()}catch(e){return!1}}else e&&g(T,e);Ee(e,t,n,o,i)}function Ie(){var e,t;return!(!window.cookieInformationCustomConfig||(e=window.cookieInformationCustomConfig.hasOwnProperty("acceptFrequency"),t=window.cookieInformationCustomConfig.hasOwnProperty("declineFrequency"),!e&&!t)||(e&&!t||!e&&t?(console.warn("CookieInformation: you have incorrectly defined your custom config. Some of the frequencies properties associated with showing banner are missing."),1):(e=window.cookieInformationCustomConfig.acceptFrequency,t=window.cookieInformationCustomConfig.declineFrequency,(!u(e)||!u(t))&&(console.warn("CookieInformation: frequency properties associated with showing banner have to be integers."),1))))}function l(e,t){e=e.length===t.length&&(!(2<arguments.length&&void 0!==arguments[2])||arguments[2]);return Ie()?e?window.cookieInformationCustomConfig.acceptFrequency:window.cookieInformationCustomConfig.declineFrequency:e?365:14}function g(e,t){var n=l(t.consents_approved,window.cicl);fe(e,t,d(t.timestamp,n));try{C()}catch(e){return!1}}function Ee(e,t,n,o,i){var r=p(S);if(!(e||t||r))return h(o),null;if(t&&!e)if(void 0===t.website_uuid){s(T,c(location.host)),s(T,"."+location.host);var a=p(T);(t=JSON.parse(a)||t).website_uuid=n||"",g(T,t)}else if(be(n,t))s(T,c(location.host)),s(T,"."+location.host),s(T),s(S),Oe(i,A),window.cicc=w(window.cicl),m(),h(o);else try{C()}catch(e){return!1}else if(e)if(void 0===e.website_uuid){e.website_uuid=n||"";a=l(e.consents_approved,window.cicl);Se(i,e,d(e.timestamp,a),A,x),g(T,e)}else if(be(n,e))s(T,c(location.host)),s(T,"."+location.host),s(T),s(S),Oe(i,A),window.cicc=w(window.cicl),m(),h(o);else{s(T,c(location.host)),s(T,"."+location.host);try{C()}catch(e){return!1}}else if(r)if(p("cicsversion")===n&&t)try{C()}catch(e){return!1}else s(S),h(o);else try{C()}catch(e){return!1}}function xe(e,t){return!(!_e(e)||!_e(t))&&t+"_"+e}function Ae(e){return e.startsWith("www.")?e.replace("www.",""):e}function Te(){B=!0;var e=document.getElementsByName(L)[0],t=Ae(location.hostname);try{e.contentWindow.postMessage({type:"GET_COOKIE_CONTROL",domainName:t},_.cdnUrl)}catch(e){y({data:{domainName:t,type:"GET_COOKIE_CONTROL",cookieConsent:{}},origin:_.cdnUrl})}}function Se(t,n,o,i,e){var r=document.getElementsByName(L)[0],i={id:i,domains:e};if(B)try{r.contentWindow.postMessage({type:"SAVE",cookieName:t,cookieConsent:n,expirationTime:o,website:i},_.cdnUrl)}catch(e){y({data:{cookieName:t,type:"SAVE",cookieConsent:n,expirationTime:o,website:i},origin:_.cdnUrl})}}function Oe(t,n){var e=document.getElementsByName(L)[0];if(B)try{e.contentWindow.postMessage({type:"DELETE",cookieName:t,websiteId:n},_.cdnUrl)}catch(e){y({data:{cookieName:t,type:"DELETE",websiteId:n},origin:_.cdnUrl})}}function y(e){if(e.origin===_.cdnUrl){var t=null,n=null;if("GET"===e.data.type){try{t=e.data.cookieConsent,n=JSON.parse(p(T))}catch(e){console.log("There was an error in parsing cookie value",e)}ke(t,n,M.websiteUuid,E,e.data.cookieName),e.data.cookieConsent?f(e.data.cookieConsent):f(n),b()}else"SAVE"!==e.data.type&&"DELETE"!==e.data.type&&"GET_COOKIE_CONTROL"===e.data.type&&f(e.data.cookieConsent,!0)}}function Le(){return _.cdnUrl+"/"+_.cookieSharingWebpageFileName}function Ne(e){if(B)try{var t=e,n=document.getElementsByName(L)[0];try{n.contentWindow.postMessage({type:"GET",cookieName:t},_.cdnUrl)}catch(e){y({data:{cookieName:t,type:"GET",cookieConsent:{}},origin:_.cdnUrl})}}catch(e){console.log("Cookie Information: ",e)}else setTimeout(function(){Ne(e)},5)}function Be(e,t,n){try{var o,i=document.getElementById(j),r=(i&&i.remove(),document.createElement("div")),a=(r.innerHTML=e,r.style.display="none",r.id=j,document.getElementsByTagName("body")[0]),c=document.createElement("script"),s=(c.setAttribute("type","text/javascript"),c.textContent=t,re());return s&&((o=r.getElementsByTagName("style")[0])&&o.setAttribute("nonce",s),c.setAttribute("nonce",s)),r.appendChild(c),a.insertBefore(r,a.firstChild),!0}catch(e){return console.log("Cookie Information: there was an error while trying to add template to website",e),!1}}function h(e){try{document.getElementById(e).style.display="block",window[I]()}catch(e){return!1}finally{je(j)}}function C(){try{window[Ge]()}catch(e){return!1}finally{je(j)}}function je(t){setTimeout(function(){var e=document.getElementById(t);e&&(e.style.display="block")},0)}function Me(t){try{return De.toASCII(t)}catch(e){return t}}function b(){var e=new D("CookieInformationConsentGiven");window.dispatchEvent(e),G(window.CookieInformation.youtubeCategorySdk,window.CookieInformation.youtubeNotVisibleDescription,window.CookieInformation.youtubeBlockedCSSClassName),Z()}function Fe(){var e=document.getElementById(E);e&&(e.style.display="block",e.style.opacity="1");try{window[I]()}catch(e){return!1}finally{je(j)}}var v,_,Ue,De,Pe,k,I,Ge,We,E,x,A,T,S,Re,O,L,N,t,B,qe,Je,Ve,He,j,M;window.CookieInformation=window.CookieInformation||(v=Array,_=n("./config"),Ue=n("./IABStub"),De=n("punycode"),Pe=n("@iabtcf/stub"),k=null,I="showBannerMethod",Ge="hideBannerMethod",x=[],A=E=We="",T="CookieInformationConsent",S="euconsent-v2",Re="cicc-template",O="cookie_cat_necessary",N=!(L="cookie-information-sharinglibrary-iframe"),t=window.Node||window.Element,Je=qe="",Ve=0,He=B=!1,j="cookie-information-template-wrapper",t&&t.prototype&&null==t.prototype.lastElementChild&&Object.defineProperty(t.prototype,"lastElementChild",{get:function(){for(var e,t=this.childNodes,n=t.length-1;e=t[n--];)if(1===e.nodeType)return e;return null}}),v.prototype.forEach||(v.prototype.forEach=function(e,t){for(var n=0,o=this.length;n<o;++n)n in this&&e.call(t,this[n],n,this)}),String.prototype.startsWith||(String.prototype.startsWith=function(e,t){return this.indexOf(e,t=t||0)===t}),"function"!=typeof window.CustomEvent&&(D.prototype=window.Event.prototype,window.CustomEvent=D),[Element.prototype,CharacterData.prototype,DocumentType.prototype].forEach(function(e){e.hasOwnProperty("remove")||Object.defineProperty(e,"remove",{configurable:!0,enumerable:!0,writable:!0,value:function(){this.parentNode.removeChild(this)}})}),window.CookieInformationScriptLoaded||(window.cicc={},window.cicc[O]=!0,window.cicl=[],te(),f(null,!0),V(L,Le(),"Cookie Information cookie sharing library","display:none",H(),Te),document.body?e():window.attachEvent?window.attachEvent("onload",e):window.addEventListener("DOMContentLoaded",e,!1),window.CookieInformationScriptLoaded=!0),(M={config:_,websiteUuid:"",cookieConsent:"",initializeBanner:function(e,t,n,o,i,r,a,c,s,u,d,l){I=n,Ge=o,We=a,M.websiteUuid=u||"",A=d,N=!!l,qe=e,Je=t;n=document.createElement("div"),n.innerHTML=e,E=n.lastElementChild.id,Ie(),void 0!==c?x=c.split(","):(x=[],console.log("CookieInformation: List of domains has not been passed correctly.")),void 0!==s?window.cicl=s.split(","):(window.cicl=[],console.log("CookieInformation: List of categories has not been passed correctly. Only necessary cookies will be accepted")),o=i,a=r,window.CookieConsent={},window.CookieConsent.show=Fe,window.CookieConsent.renew=Fe,window.CookieConsent.dialog={},window.CookieConsent.dialog.submitConsent=function(){window.cicc=ye(window.cicl),M.submitConsent(),m()},window.CookieConsent.dialog.submitDecline=function(){window.cicc=w(window.cicl),M.submitConsent(),m()},window.CookieConsent.dialog.showDetailsText=o,window.CookieConsent.dialog.hideDetailsText=a,window.CookieConsentDialog=window.CookieConsent.dialog,l=xe(d,T);N?Ne(l):(Be(qe,Je),t=JSON.parse(p(T)),function e(t,n){B?Oe(t,n):setTimeout(function(){e(t,n)},5)}(l,d),f(t),Ee(!1,t,u,E,""),b())},sendConsent:function(e){var t={},n=_.mainEndpoint+_.apiPrefix+_.consentAcceptanceEndpoint;(t=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject("Microsoft.XMLHTTP")).open("POST",n,!0),t.setRequestHeader("Content-type","application/json"),t.send(e)},injectCategoriesConsent:function(e,t){var n=ne();null!=n&&(n.innerHTML=e,(e=document.createElement("script")).setAttribute("type","text/javascript"),e.textContent=t,(t=re())&&e.setAttribute("nonce",t),n.appendChild(e)),m()},changeCategoryConsentDecision:function(e,t){e!==O&&-1!==window.cicl.indexOf(e)&&(pe(t)?window.cicc[e]=t:window.cicc[e]?window.cicc[e]=!window.cicc[e]:window.cicc[e]=!0)},submitConsent:function(e){(r={website_uuid:M.websiteUuid||"",timestamp:(new Date).toISOString(),consent_url:window.location.href,consent_website:We,consent_domain:window.location.hostname,user_uid:le()||de(),consents_approved:[],consents_denied:[],user_agent:navigator.userAgent}).consents_approved=ge(window.cicc),r.consents_denied=we(window.cicc);var t,n,o,i,r;ce()&&(i=r,t=ae(window.CookieInformation.cmp.IABlanguagesCodesMapping),n=window.CookieInformation.cmp.getAllowedPurposesFromConsentCookie(),o=window.CookieInformation.cmp.getAllowedVendorsFromConsentCookie(),document.getElementById("coiConsentBannerIABColumn")&&-1!==i.consents_approved.indexOf("cookie_cat_marketing")&&(o=(i=window.CookieInformation.cmp.getIABConsent()).vendorList.vendors.map(function(e){return e.id}),n=i.vendorList.purposes.map(function(e){return e.id})),window.CookieInformation.cmp.updateIABConsentString(_.cmpId,_.cmpVersion,t,n,o)),e||(i=l(r.consents_approved,window.cicl),e=d(r.timestamp,i)),N&&Se(xe(A,T),r,e,A,x),fe(T,r,e),J(r),se()&&W(r),window.CookieInformation.sendConsent(JSON.stringify(r));try{C()}catch(e){return!1}m(),b()},getConsentGivenFor:function(e){return window.cicc[e]},submitAllCategories:function(){window.cicc=ye(window.cicl),M.submitConsent(),m()},declineAllCategories:function(){window.cicc=w(window.cicl),M.submitConsent(),m()}})._getDataCulture=i,M._getConsentScriptUrl=ue,M._generateUuidv4=de,M._getCookieValue=p,M._setCookie=fe,M._deleteCookie=s,M._isBoolean=pe,M._getVisitorId=le,M._getApprovedCategories=ge,M._getDeniedCategories=we,M._isArray=r,M._setAllCategoriesToApproved=ye,M._setAllCategoriesToDenied=w,M._setCheckboxesSelection=m,M._addExternalScript=z,M._getCookieInformationCheckboxes=me,M._initializeCMP=he,M._encodeURIComponentWithBrackets=a,M._decodeURIComponentWithBrackets=Ce,M._hasUuidChanged=be,M._isDate=ve,M._isInteger=u,M._calculateExpirationTimeOfTheCookie=d,M._getRootDomain=c,M._handleCookieSharing=ke,M._getCookieConsentNameForSpecificWebsite=xe,M._isString=_e,M._prepareFrame=V,M._getUrlForCookieSharingLibrary=Le,M._handlePushForConsentLogic=Ee,M._getDomainInCanonicalForm=Ae,M._addTemplateToDOM=Be,M._showBannerTemplate=h,M._hideBannerTemplate=C,M._getExpirationDays=l,M._validateCookieExpirationTimeConfig=Ie,M._submitConsentWithoutSendingInformationToAPI=g,M._setConsentForGTM=J,M._setConsentForTealiumTagManager=W,M._punycodeDomain=Me,M._instructVisitorWhichCategoryAgreementWillEnableVideos=G,M._isYoutubeVideo=P,M._fireEventOnConsentGiven=b,M._manageTaggedExternalElementsByConsents=Z,M._addIframeWithSdkImplemented=Y,M._addExternalImageWithSdkImplemented=K,M._addExternalScriptWithSdkImplemented=Q,M._getIABDataCulture=ae,M._isTCFEnabled=$,M._constructUrlToCMPLibrary=ee,M._constructUrlToTcfIframe=function(){return _.cookieInformationIABCdnUrl+"/"+_.cookieInformationTCFLibraryIframe},M._getMainLibraryScript=H,M._addConsentPopupToWebsiteAfterCmpIsLoaded=o,M._isGoogleConsentModeEnabled=R,M._setupGoogleConsentMode=q,M._loadCategoriesConsent=ie,M._loadAutoblockingModule=te,M._restartBanner=Fe,M.loadConsent=e,M)},{"./IABStub":3,"./config":4,"./cookie-autoblocking-module-es3":6,"@iabtcf/stub":1,punycode:2}],6:[function(e,t,n){"use strict";var o=function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e)){var n=t,o=[],i=!0,t=!1,r=void 0;try{for(var a,c=e[Symbol.iterator]();!(i=(a=c.next()).done)&&(o.push(a.value),!n||o.length!==n);i=!0);}catch(e){t=!0,r=e}finally{try{!i&&c.return&&c.return()}finally{if(t)throw r}}return o}throw new TypeError("Invalid attempt to destructure non-iterable instance")},i=e("./config"),r=Object.getOwnPropertyDescriptor(Document.prototype,"cookie"),a=(r.set=r.set.bind(document),r.get=r.get.bind(document),{cookiesList:null,cookiesQueue:[]});function c(){"function"==typeof Object.defineProperty?Object.defineProperty(document,"cookie",{get:function(){return r.get()},set:function(e){u(e)},configurable:!0}):document.__defineSetter__("cookie",u)}function s(){"function"==typeof Object.defineProperty?Object.defineProperty(document,"cookie",{get:function(){return r.get()},set:function(e){r.set(e)},configurable:!0}):document.__defineSetter__("cookie",function(e){return r.set(e)})}function u(e){a.cookiesQueue.push(e),null!==a.cookiesList&&m(e)}function d(){a.cookiesQueue.forEach(function(e){m(e)})}function l(){a.cookiesQueue.forEach(function(e){document.cookie=e}),a.cookiesQueue.length=0}function f(){s(),l()}function p(e){var n=C(e),o=window.location.hostname;return a.cookiesList.filter(function(e){var t=e.name,e=e.domain;return t===n.name&&e===(n.domain||o)})[0]||{name:n.name,ignore:!0}}function m(e){var t=p(e),n=t.category,t=t.ignore;window.cicc[n]||t?r.set(e):w(e)}function w(e){e=C(e),e.expires="Thu, 01 Jan 1970 00:00:01 GMT",delete e["max-age"],e=b(e);r.set(e)}function g(){window.addEventListener("CookieInformationConsentGiven",y)}function y(){null!==a.cookiesList&&d()}function h(e){var e=v(e),n=void 0;(n=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject("Microsoft.XMLHTTP")).onreadystatechange=function(){var e,t;a.cookiesList=[],4===n.readyState&&(200===n.status&&(e=(t=JSON.parse(n.responseText)).cookies,(void 0===(t=t.metadata)?{}:t).autoblocking_enabled)?(a.cookiesList=void 0===e?[]:e,d):f)()},n.open("GET",e,!0),n.send(null)}function C(e){var e=e.split(";").map(function(e){return e.split("=").map(function(e){return e.trim()})}),t=o(e[0],2),n=t[0],t=t[1],e=(e.shift(),e.reduce(function(e,t){var t=o(t,2),n=t[0],t=t[1];return e[n]=t,e},{}));return Object.assign({name:n,value:t},e)}function b(e){var t=e.name,n=e.value,e=Object.assign({},e),t=(delete e.name,delete e.value,t+"=");return n&&(t+=""+n),Object.keys(e).length&&(t+=";"),t+=Object.entries(e).reduce(function(e,t){return e+=t.join("=")+";"},"")}function v(e){return"localhost"===window.location.hostname?"http://localhost:8085/dist/cabl.json":i.cdnUrl+"/cookie-data/"+e+"/cabl.json"}t.exports={initializeCookieAutoBlocking:function(e){c(),h(e),g()},_replaceNativeCookie:c,_restoreNativeCookie:s,_customSetCookie:u,_manageCookiesQueue:d,_clearCookiesQueue:l,_matchCookie:p,_manageCookie:m,_removeCookie:w,_setWaitForConsentListener:g,_waitForConsentCallback:y,_getCookiesList:h,_serializeCookie:C,_deserializeCookie:b,_getCookiesListUrl:v,_disableCookiesAutoblocking:f,_state:a}},{"./config":4}]},{},[5]);
+            !function o(i, r, a) {
+              function c(t, e) {
+                  if (!r[t]) {
+                      if (!i[t]) {
+                          var n = "function" == typeof require && require;
+                          if (!e && n)
+                              return n(t, !0);
+                          if (s)
+                              return s(t, !0);
+                          throw (e = new Error("Cannot find module '" + t + "'")).code = "MODULE_NOT_FOUND",
+                          e
+                      }
+                      n = r[t] = {
+                          exports: {}
+                      },
+                      i[t][0].call(n.exports, function(e) {
+                          return c(i[t][1][e] || e)
+                      }, n, n.exports, o, i, r, a)
+                  }
+                  return r[t].exports
+              }
+              for (var s = "function" == typeof require && require, e = 0; e < a.length; e++)
+                  c(a[e]);
+              return c
+          }({
+              1: [function(e, t, n) {
+                  "use strict";
+                  function a(e) {
+                      return (a = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+                          return typeof e
+                      }
+                      : function(e) {
+                          return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
+                      }
+                      )(e)
+                  }
+                  function o() {
+                      for (var e, o, i = [], r = window, t = r; t; ) {
+                          try {
+                              if (t.frames.__tcfapiLocator) {
+                                  e = t;
+                                  break
+                              }
+                          } catch (e) {}
+                          if (t === r.top)
+                              break;
+                          t = t.parent
+                      }
+                      e || (function e() {
+                          var t, n = r.document, o = !!r.frames.__tcfapiLocator;
+                          return o || (n.body ? ((t = n.createElement("iframe")).style.cssText = "display:none",
+                          t.name = "__tcfapiLocator",
+                          n.body.appendChild(t)) : setTimeout(e, 5)),
+                          !o
+                      }(),
+                      r.__tcfapi = function() {
+                          for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++)
+                              t[n] = arguments[n];
+                          if (!t.length)
+                              return i;
+                          "setGdprApplies" === t[0] ? 3 < t.length && 2 === parseInt(t[1], 10) && "boolean" == typeof t[3] && (o = t[3],
+                          "function" == typeof t[2]) && t[2]("set", !0) : "ping" === t[0] ? "function" == typeof t[2] && t[2]({
+                              gdprApplies: o,
+                              cmpLoaded: !1,
+                              cmpStatus: "stub"
+                          }) : i.push(t)
+                      }
+                      ,
+                      r.addEventListener("message", function(n) {
+                          var o = "string" == typeof n.data
+                            , e = {};
+                          if (o)
+                              try {
+                                  e = JSON.parse(n.data)
+                              } catch (n) {}
+                          else
+                              e = n.data;
+                          var i = "object" === a(e) ? e.__tcfapiCall : null;
+                          i && window.__tcfapi(i.command, i.version, function(e, t) {
+                              e = {
+                                  __tcfapiReturn: {
+                                      returnValue: e,
+                                      success: t,
+                                      callId: i.callId
+                                  }
+                              };
+                              n && n.source && n.source.postMessage && n.source.postMessage(o ? JSON.stringify(e) : e, "*")
+                          }, i.parameter)
+                      }, !1))
+                  }
+                  void 0 !== t ? t.exports = o : o()
+              }
+              , {}],
+              2: [function(e, T, S) {
+                  !function(A) {
+                      !function() {
+                          var e = this
+                            , t = "object" == typeof S && S && !S.nodeType && S
+                            , n = "object" == typeof T && T && !T.nodeType && T
+                            , o = "object" == typeof A && A;
+                          o.global !== o && o.window !== o && o.self !== o || (e = o);
+                          var i, r, g = 2147483647, y = 36, h = 26, a = 38, c = 700, s = /^xn--/, u = /[^\x20-\x7E]/, d = /[\x2E\u3002\uFF0E\uFF61]/g, l = {
+                              overflow: "Overflow: input needs wider integers to process",
+                              "not-basic": "Illegal input >= 0x80 (not a basic code point)",
+                              "invalid-input": "Invalid input"
+                          }, f = y - 1, C = Math.floor, b = String.fromCharCode;
+                          function v(e) {
+                              throw new RangeError(l[e])
+                          }
+                          function p(e, t) {
+                              for (var n = e.length, o = []; n--; )
+                                  o[n] = t(e[n]);
+                              return o
+                          }
+                          function m(e, t) {
+                              var n = e.split("@")
+                                , o = ""
+                                , n = (1 < n.length && (o = n[0] + "@",
+                              e = n[1]),
+                              (e = e.replace(d, ".")).split("."));
+                              return o + p(n, t).join(".")
+                          }
+                          function _(e) {
+                              for (var t, n, o = [], i = 0, r = e.length; i < r; )
+                                  55296 <= (t = e.charCodeAt(i++)) && t <= 56319 && i < r ? 56320 == (64512 & (n = e.charCodeAt(i++))) ? o.push(((1023 & t) << 10) + (1023 & n) + 65536) : (o.push(t),
+                                  i--) : o.push(t);
+                              return o
+                          }
+                          function w(e) {
+                              return p(e, function(e) {
+                                  var t = "";
+                                  return 65535 < e && (t += b((e -= 65536) >>> 10 & 1023 | 55296),
+                                  e = 56320 | 1023 & e),
+                                  t += b(e)
+                              }).join("")
+                          }
+                          function k(e, t) {
+                              return e + 22 + 75 * (e < 26) - ((0 != t) << 5)
+                          }
+                          function I(e, t, n) {
+                              var o = 0;
+                              for (e = n ? C(e / c) : e >> 1,
+                              e += C(e / t); f * h >> 1 < e; o += y)
+                                  e = C(e / f);
+                              return C(o + (f + 1) * e / (e + a))
+                          }
+                          function E(e) {
+                              var t, n, o, i, r, a, c, s = [], u = e.length, d = 0, l = 128, f = 72, p = e.lastIndexOf("-");
+                              for (p < 0 && (p = 0),
+                              n = 0; n < p; ++n)
+                                  128 <= e.charCodeAt(n) && v("not-basic"),
+                                  s.push(e.charCodeAt(n));
+                              for (o = 0 < p ? p + 1 : 0; o < u; ) {
+                                  for (i = d,
+                                  r = 1,
+                                  a = y; u <= o && v("invalid-input"),
+                                  c = e.charCodeAt(o++),
+                                  (y <= (c = c - 48 < 10 ? c - 22 : c - 65 < 26 ? c - 65 : c - 97 < 26 ? c - 97 : y) || c > C((g - d) / r)) && v("overflow"),
+                                  d += c * r,
+                                  !(c < (c = a <= f ? 1 : f + h <= a ? h : a - f)); a += y)
+                                      r > C(g / (c = y - c)) && v("overflow"),
+                                      r *= c;
+                                  f = I(d - i, t = s.length + 1, 0 == i),
+                                  C(d / t) > g - l && v("overflow"),
+                                  l += C(d / t),
+                                  d %= t,
+                                  s.splice(d++, 0, l)
+                              }
+                              return w(s)
+                          }
+                          function x(e) {
+                              for (var t, n, o, i, r, a, c, s, u, d, l = [], f = (e = _(e)).length, p = 128, m = 72, w = t = 0; w < f; ++w)
+                                  (c = e[w]) < 128 && l.push(b(c));
+                              for (n = o = l.length,
+                              o && l.push("-"); n < f; ) {
+                                  for (i = g,
+                                  w = 0; w < f; ++w)
+                                      p <= (c = e[w]) && c < i && (i = c);
+                                  for (i - p > C((g - t) / (s = n + 1)) && v("overflow"),
+                                  t += (i - p) * s,
+                                  p = i,
+                                  w = 0; w < f; ++w)
+                                      if ((c = e[w]) < p && ++t > g && v("overflow"),
+                                      c == p) {
+                                          for (r = t,
+                                          a = y; !(r < (u = a <= m ? 1 : m + h <= a ? h : a - m)); a += y)
+                                              l.push(b(k(u + (d = r - u) % (u = y - u), 0))),
+                                              r = C(d / u);
+                                          l.push(b(k(r, 0))),
+                                          m = I(t, s, n == o),
+                                          t = 0,
+                                          ++n
+                                      }
+                                  ++t,
+                                  ++p
+                              }
+                              return l.join("")
+                          }
+                          if (i = {
+                              version: "1.4.1",
+                              ucs2: {
+                                  decode: _,
+                                  encode: w
+                              },
+                              decode: E,
+                              encode: x,
+                              toASCII: function(e) {
+                                  return m(e, function(e) {
+                                      return u.test(e) ? "xn--" + x(e) : e
+                                  })
+                              },
+                              toUnicode: function(e) {
+                                  return m(e, function(e) {
+                                      return s.test(e) ? E(e.slice(4).toLowerCase()) : e
+                                  })
+                              }
+                          },
+                          "function" == typeof define && "object" == typeof define.amd && define.amd)
+                              define("punycode", function() {
+                                  return i
+                              });
+                          else if (t && n)
+                              if (T.exports == t)
+                                  n.exports = i;
+                              else
+                                  for (r in i)
+                                      i.hasOwnProperty(r) && (t[r] = i[r]);
+                          else
+                              e.punycode = i
+                      }
+                      .call(this)
+                  }
+                  .call(this, "undefined" != typeof global ? global : "undefined" != typeof self ? self : "undefined" != typeof window ? window : {})
+              }
+              , {}],
+              3: [function(e, t, n) {
+                  t.exports = function() {
+                      "use strict";
+                      function e(n) {
+                          var o, i = "string" == typeof n.data;
+                          try {
+                              var e = i ? JSON.parse(n.data) : n.data
+                          } catch (e) {
+                              return
+                          }
+                          e.__cmpCall && (o = e.__cmpCall,
+                          window.__cmp(o.command, o.parameter, function(e, t) {
+                              e = {
+                                  __cmpReturn: {
+                                      returnValue: e,
+                                      success: t,
+                                      callId: o.callId
+                                  }
+                              };
+                              n.source.postMessage(i ? JSON.stringify(e) : e, "*")
+                          }))
+                      }
+                      !function e() {
+                          var t, n;
+                          window.frames.__cmpLocator || (document.body ? (t = document.body,
+                          (n = document.createElement("iframe")).style.cssText = "display:none",
+                          n.name = "__cmpLocator",
+                          n.title = "IAB consent manager",
+                          t.appendChild(n)) : setTimeout(e, 5))
+                      }(),
+                      "function" != typeof window.__cmp && (window.__cmp = function() {
+                          var e = arguments;
+                          if (window.__cmp.a = window.__cmp.a || [],
+                          !e.length)
+                              return window.__cmp.a;
+                          "ping" === e[0] ? e[2]({
+                              gdprAppliesGlobally: !1,
+                              cmpLoaded: !1
+                          }, !0) : window.__cmp.a.push([].slice.apply(e))
+                      }
+                      ,
+                      window.__cmp.msgHandler = e,
+                      window.addEventListener ? window.addEventListener("message", e, !1) : window.attachEvent("onmessage", e))
+                  }
+              }
+              , {}],
+              4: [function(e, t, n) {
+                  t.exports = {
+                      cdnUrl: "https://policy.app.cookieinformation.com",
+                      version: "ee87f3",
+                      mainEndpoint: "https://consent.app.cookieinformation.com",
+                      apiPrefix: "/api",
+                      consentAcceptanceEndpoint: "/consent",
+                      IABendpoint: "https://vendorlist.consensu.org",
+                      IABLibraryFileName: "cmp.js",
+                      cmpId: "162",
+                      cmpVersion: "1",
+                      cookieInformationIABCdnUrl: "https://cookieinformation.mgr.consensu.org",
+                      cookieInformationTCFCdnUrl: "https://policy.app.cookieinformation.com",
+                      cookieInformationIABWebpageFileName: "iabiframe.html",
+                      cookieInformationTCFLibraryIframe: "tcfcmpiframe.html",
+                      cookieInformationTCFLibraryScript: "tcf-cmp.js",
+                      cookieSharingWebpageFileName: "cookiesharingiframe.html",
+                      pathToPubVendors: "/.well-known/pubvendors.json",
+                      googleConsentModeDeveloperId: "developer_id.dNmIyNz"
+                  }
+              }
+              , {}],
+              5: [function(n, F, U) {
+                  "use strict";
+                  function D(e, t) {
+                      t = t || {
+                          bubbles: !1,
+                          cancelable: !1,
+                          detail: null
+                      };
+                      var n = document.createEvent("CustomEvent");
+                      return n.initCustomEvent(e, t.bubbles, t.cancelable, t.detail),
+                      n
+                  }
+                  function P(e) {
+                      return -1 !== e.indexOf("youtube") || -1 !== e.indexOf("vimeo")
+                  }
+                  function G(e, t, n) {
+                      if (window.CookieInformation.enableYoutubeNotVisibleDescription)
+                          if (window.CookieInformation.getConsentGivenFor(e))
+                              for (var o = document.getElementsByClassName("cookieinformation-yt-element"), i = [].slice.call(o), r = 0; r < i.length; ++r)
+                                  i[r].remove();
+                          else if (!window.CookieInformation.getConsentGivenFor(e))
+                              for (var a, c = document.getElementsByTagName("iframe"), s = "", u = 0; u < c.length; ++u)
+                                  c[u].getAttribute("data-consent-src") && c[u].getAttribute("data-category-consent") === e && P(s = c[u].getAttribute("data-consent-src").toLowerCase()) && !document.getElementById("cookieinformation-" + s) && ((a = document.createElement("div")).setAttribute("id", "cookieinformation-" + s),
+                                  a.setAttribute("class", n + " cookieinformation-yt-element"),
+                                  a.setAttribute("style", "cursor:pointer;"),
+                                  a.setAttribute("onclick", "javascript:CookieConsent.renew();"),
+                                  a.innerHTML = t,
+                                  c[u].parentNode.insertBefore(a, c[u].nextSibling),
+                                  X(c[u]))
+                  }
+                  function W(e) {
+                      if (window.utag_data = window.utag_data || {},
+                      window.utag = window.utag || {},
+                      e.consents_approved) {
+                          window.utag_data.cookie_information_categories = window.utag_data.cookie_information_categories || [];
+                          for (var t = e.consents_approved.length, n = 0; n < t; n++)
+                              window.utag_data.cookie_information_categories.push(e.consents_approved[n]);
+                          window.utag.view && "[object Function]" === {}.toString.call(window.utag.view) && window.utag.view({
+                              cookie_information_categories: e.consents_approved
+                          })
+                      }
+                  }
+                  function R() {
+                      return !(!!k && "false" === k.getAttribute("data-gcm-enabled"))
+                  }
+                  function q(e) {
+                      var t, n, o, i;
+                      void 0 !== e && r(e.consents_approved) && (t = -1 !== e.consents_approved.indexOf("cookie_cat_marketing") ? "granted" : "denied",
+                      n = -1 !== e.consents_approved.indexOf("cookie_cat_statistic") ? "granted" : "denied",
+                      i = o = -1 !== e.consents_approved.indexOf("cookie_cat_functional") ? "granted" : "denied",
+                      e = -1 !== e.consents_approved.indexOf("cookie_cat_necessary") ? "granted" : "denied",
+                      window.gtag) && "[object Function]" === {}.toString.call(window.gtag) && (window.gtag("consent", "update", {
+                          ad_storage: t,
+                          analytics_storage: n,
+                          functionality_storage: o,
+                          personalization_storage: i,
+                          security_storage: e,
+                          wait_for_update: 500
+                      }),
+                      "denied" == t && window.gtag("set", "ads_data_redaction", !0),
+                      window.gtag("set", _.googleConsentModeDeveloperId, !0))
+                  }
+                  function J(e) {
+                      window.dataLayer = window.dataLayer || [];
+                      var t = r(window.dataLayer);
+                      if (e.consents_approved && t)
+                          for (var n = e.consents_approved.length, o = 0; o < n; o++)
+                              window.dataLayer.push({
+                                  event: e.consents_approved[o]
+                              });
+                      R() && q(e)
+                  }
+                  function f(e, t) {
+                      e = !t && JSON.stringify(e) || p(T);
+                      try {
+                          e = JSON.parse(e)
+                      } catch (e) {
+                          console.log("An error occurred while parsing consent cookie to get approved categories", e)
+                      }
+                      !0 !== t && (J(e),
+                      se()) && W(e),
+                      e && (e.consents_approved = e.consents_approved || [],
+                      e.consents_denied = e.consents_denied || [],
+                      e.consents_approved.forEach(function(e) {
+                          "true" !== e && "false" !== e && (window.cicc[e] = !0)
+                      }),
+                      e.consents_denied.forEach(function(e) {
+                          "true" !== e && "false" !== e && (window.cicc[e] = !1)
+                      })),
+                      m()
+                  }
+                  function V(e, t, n, o, i, r, a) {
+                      var c = document.createElement("iframe");
+                      if (c.name = e || "",
+                      c.src = t || "",
+                      c.title = n || "",
+                      c.style.cssText = o || "",
+                      a && (c.id = a),
+                      i)
+                          try {
+                              return i.parentNode.insertBefore(c, i.nextSibling),
+                              window.addEventListener("message", y, !1),
+                              c.onload = r,
+                              !0
+                          } catch (e) {
+                              return console.log("CookieInformation: There was an error while adding iframe into webpage. Error reason: " + e),
+                              !1
+                          }
+                  }
+                  function H() {
+                      for (var e = document.getElementsByTagName("script"), t = null, n = 0; n < e.length; ++n)
+                          if (e[n].getAttribute("src")) {
+                              if (-1 !== (t = e[n].getAttribute("src").toLowerCase()).indexOf("/uc.js") && -1 !== t.indexOf("cookieinformation"))
+                                  return e[n];
+                              if ("CookieConsent" === e[n].getAttribute("id"))
+                                  return e[n]
+                          }
+                      return null
+                  }
+                  function z(e) {
+                      if (!e)
+                          return console.log("CookieInformation: lack of data-consent-src attribute or incorrect value has been passed.Please update it accordingly to the documentation"),
+                          !1;
+                      var t = "consent-cmp-file"
+                        , n = document.getElementById(t)
+                        , n = (n && n.remove(),
+                      document.createElement("script"));
+                      n.type = "text/javascript",
+                      n.async = !1,
+                      n.src = e,
+                      n.id = t,
+                      n.charset = "UTF-8";
+                      try {
+                          return document.body.appendChild(n),
+                          !0
+                      } catch (e) {
+                          return console.log("CookieInformation: there was an error while injecting script into webpage. Error reason: " + e),
+                          !1
+                      }
+                  }
+                  function X(e) {
+                      e.style.display = "none"
+                  }
+                  function Q(e, t, n) {
+                      if (!e)
+                          return console.log("CookieInformation: lack of data-consent-src attribute or incorrect value has been passed.Please update it accordingly to the documentation"),
+                          !1;
+                      var o = document.createElement("script")
+                        , i = [];
+                      null != n && null != n.attributes && (n.setAttribute("src", e),
+                      i = [].slice.call(n.attributes));
+                      for (var r = 0; r < i.length; ++r)
+                          o.setAttribute(i[r].name, i[r].value);
+                      o.setAttribute("data-category-consent", t),
+                      o.setAttribute("data-consent-src", e),
+                      o.setAttribute("src", e);
+                      try {
+                          return n.parentNode.insertBefore(o, n.nextSibling),
+                          !0
+                      } catch (e) {
+                          return console.log("CookieInformation: there was an error while injecting script into webpage. Error reason: " + e),
+                          !1
+                      }
+                  }
+                  function K(e, t, n) {
+                      if (!e)
+                          return console.log("CookieInformation: lack of data-consent-src attribute or incorrect value has been passed.Please update it accordingly to the documentation"),
+                          !1;
+                      var o = document.createElement("IMG")
+                        , i = [];
+                      null != n && null != n.attributes && (n.setAttribute("src", e),
+                      i = [].slice.call(n.attributes));
+                      for (var r = 0; r < i.length; ++r)
+                          ("style" !== i[r].name || -1 === i[r].value.indexOf("display: none") && -1 === i[r].value.indexOf("display:none")) && o.setAttribute(i[r].name, i[r].value);
+                      o.setAttribute("data-category-consent", t),
+                      o.setAttribute("data-consent-src", e),
+                      o.setAttribute("src", e);
+                      try {
+                          return n.parentNode.insertBefore(o, n.nextSibling),
+                          !0
+                      } catch (e) {
+                          return console.log("CookieInformation: there was an error while injecting image into webpage. Error reason: " + e),
+                          !1
+                      }
+                  }
+                  function Y(e, t, n) {
+                      if (!e)
+                          return console.log("CookieInformation: lack of data-consent-src attribute or incorrect value has been passed.Please update it accordingly to the documentation"),
+                          !1;
+                      var o = document.createElement("IFRAME")
+                        , i = [];
+                      null != n && null != n.attributes && (n.setAttribute("src", e),
+                      i = [].slice.call(n.attributes));
+                      for (var r = 0; r < i.length; ++r)
+                          ("style" !== i[r].name || -1 === i[r].value.indexOf("display: none") && -1 === i[r].value.indexOf("display:none")) && o.setAttribute(i[r].name, i[r].value);
+                      o.setAttribute("data-category-consent", t),
+                      o.setAttribute("data-consent-src", e),
+                      o.setAttribute("src", e);
+                      try {
+                          return n.parentNode.insertBefore(o, n.nextSibling),
+                          !0
+                      } catch (e) {
+                          return console.log("CookieInformation: there was an error while injecting iframe into webpage. Error reason: " + e),
+                          !1
+                      }
+                  }
+                  function Z() {
+                      for (var e = v.prototype.slice.call(document.querySelectorAll("[data-category-consent]")), t = 0; t < e.length; ++t) {
+                          var n, o = e[t].getAttribute("data-category-consent");
+                          window.cicc[o] ? (n = e[t].getAttribute("data-consent-src"),
+                          "SCRIPT" === e[t].tagName ? (Q(n, o, e[t]),
+                          e[t].remove()) : "IMG" === e[t].tagName ? (K(n, o, e[t]),
+                          e[t].remove()) : "IFRAME" === e[t].tagName && (Y(n, o, e[t]),
+                          e[t].remove())) : X(e[t])
+                      }
+                  }
+                  function o(e, t, n) {
+                      if (n ? document.getElementById(n) : document.getElementsByName(e)[0])
+                          return document.getElementsByTagName("body")[0].appendChild(t),
+                          !0;
+                      1e3 < ++Ve ? document.getElementsByTagName("body")[0].appendChild(t) : setTimeout(function() {
+                          o(e, t, n)
+                      }, 5)
+                  }
+                  function $(e) {
+                      return !!e && "true" === e.getAttribute("data-tcf-v2-enabled")
+                  }
+                  function ee() {
+                      var e = 0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : "2";
+                      return "1" === e ? _.cookieInformationIABCdnUrl + "/" + _.IABLibraryFileName : "2" === e ? _.cookieInformationTCFCdnUrl + "/" + _.cookieInformationTCFLibraryScript : void 0
+                  }
+                  function e() {
+                      k = H();
+                      var e = "consent-file"
+                        , t = document.getElementById(e)
+                        , t = (t && t.remove(),
+                      document.createElement("script"));
+                      t.type = "text/javascript",
+                      t.async = !0,
+                      t.setAttribute("id", e),
+                      t.src = ue(),
+                      t.charset = "UTF-8",
+                      $(k) ? (he("2"),
+                      o("__tcfapiLocator", t, "CookieInformationCmpIframe")) : ce() ? (he("1"),
+                      o("__cmpLocator", t)) : document.getElementsByTagName("body")[0].appendChild(t),
+                      ie()
+                  }
+                  function te() {
+                      var e, t;
+                      He || window.disableCookiesAutoblockingForScanner || (He = !0,
+                      e = n("./cookie-autoblocking-module-es3"),
+                      t = oe(),
+                      e.initializeCookieAutoBlocking(t))
+                  }
+                  function ne() {
+                      return document.getElementById(Re)
+                  }
+                  function oe() {
+                      return Me(window.location.hostname.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split("/")[0])
+                  }
+                  function ie() {
+                      var e, t;
+                      null != ne() && (t = "cookie-information-categories-consent",
+                      (e = document.getElementById(t)) && e.remove(),
+                      (e = document.createElement("script")).type = "text/javascript",
+                      e.async = !0,
+                      e.setAttribute("id", t),
+                      e.src = "localhost" === window.location.hostname ? "http://localhost:8085/categories-contract.js" : (t = oe(),
+                      _.cdnUrl + "/" + _.version + "/" + t + "/categories-" + i() + ".js"),
+                      e.charset = "UTF-8",
+                      document.body.appendChild(e))
+                  }
+                  function i() {
+                      return null != k && k.getAttribute("data-culture") && k.getAttribute("data-culture").replace(/“|”|„/g, "").toLowerCase() || "default"
+                  }
+                  function re() {
+                      try {
+                          return !(null == k || !k.nonce) && k.nonce
+                      } catch (e) {
+                          return !1
+                      }
+                  }
+                  function ae(e) {
+                      var t = "en";
+                      return void 0 === e[t = null != k && k.getAttribute("data-culture") ? k.getAttribute("data-culture").replace(/“|”|„/g, "").toLowerCase() || "en" : t] ? t : e[t].toLowerCase()
+                  }
+                  function ce() {
+                      return k && "true" === k.getAttribute("data-iab-enabled")
+                  }
+                  function se() {
+                      var e;
+                      if (null != k)
+                          return "true" === (e = k.getAttribute("data-tealium-enabled")) || null == e
+                  }
+                  function ue() {
+                      var e;
+                      return null !== k && k.getAttribute("cs-id") ? (e = k.getAttribute("cs-id"),
+                      _.cdnUrl + "/" + _.version + "/" + e + "/" + i() + ".js") : "localhost" === window.location.hostname ? "http://localhost:8085/banner-contract.js" : (e = Me(e = window.location.hostname.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split("/")[0]),
+                      _.cdnUrl + "/" + _.version + "/" + e + "/" + i() + ".js")
+                  }
+                  function de() {
+                      return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(e) {
+                          var t = 16 * Math.random() | 0;
+                          return ("x" == e ? t : 3 & t | 8).toString(16)
+                      })
+                  }
+                  function p(e) {
+                      e = document.cookie.match(new RegExp(e + "=([^;]+)"));
+                      return !!e && Ce(e[1])
+                  }
+                  function le() {
+                      var e = p(T);
+                      if (!e)
+                          return !1;
+                      try {
+                          e = JSON.parse(e)
+                      } catch (e) {
+                          console.log("An error occurred while trying to parse cookie value to get visitor id", e)
+                      }
+                      return e.user_uid || !1
+                  }
+                  function c(e) {
+                      e = e.split(".");
+                      return e.shift(),
+                      "." + e.join(".")
+                  }
+                  function fe(e, t, n) {
+                      var n = "expires=" + n
+                        , o = ""
+                        , o = t === Object(t) ? JSON.stringify(t) : t;
+                      "http:" === window.location.protocol || "http" === window.location.protocol ? document.cookie = e + "=" + a(o) + "; " + n + "; path=/; SameSite=Lax;" : "https:" === window.location.protocol || "https" === window.location.protocol ? document.cookie = e + "=" + a(o) + "; " + n + "; path=/; SameSite=Lax; secure" : document.cookie = e + "=" + a(o) + "; " + n + "; path=/"
+                  }
+                  function s(e, t) {
+                      t ? (document.cookie = e + "=; Path=/; Domain=" + t + "; Expires=Thu, 01 Jan 1970 00:00:01 GMT;",
+                      document.cookie = e + "=; Path=/; Domain=" + t + "; Expires=Thu, 01 Jan 1970 00:00:01 GMT; secure") : (document.cookie = e + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;",
+                      document.cookie = e + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT; secure")
+                  }
+                  function pe(e) {
+                      return !1 === e || !0 === e
+                  }
+                  function me(e, t) {
+                      var n;
+                      return !1 === r(t) || !1 === r(e) ? [] : (n = [],
+                      e.forEach(function(e) {
+                          -1 !== t.indexOf(e.attributes.name.value) && n.push(e)
+                      }),
+                      n)
+                  }
+                  function m() {
+                      me(v.prototype.slice.call(document.querySelectorAll('input[name][type="checkbox"]:not([name=""])')), window.cicl).forEach(function(e) {
+                          e.checked = !!window.cicc[e.attributes.name.value]
+                      })
+                  }
+                  function we(e) {
+                      var t, n = [];
+                      for (t in e)
+                          !e.hasOwnProperty(t) || e[t] || n.push(t);
+                      return n
+                  }
+                  function ge(e) {
+                      var t, n = [];
+                      for (t in e)
+                          e.hasOwnProperty(t) && e[t] && n.push(t);
+                      return n
+                  }
+                  function r(e) {
+                      return e && "[object Array]" === Object.prototype.toString.call(e)
+                  }
+                  function ye(e) {
+                      var t = {};
+                      return e.forEach(function(e) {
+                          t[e] = !0
+                      }),
+                      t
+                  }
+                  function w(e) {
+                      var t = {};
+                      return e.forEach(function(e) {
+                          t[e] = !1
+                      }),
+                      t[O] = !0,
+                      t
+                  }
+                  function he() {
+                      var e = 0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : "2"
+                        , t = "";
+                      "1" === e ? (Ue(),
+                      t = ee("1")) : "2" === e && (Pe(),
+                      t = ee("2")),
+                      z(t)
+                  }
+                  function Ce(e) {
+                      return decodeURIComponent(e).replace(/%28/g, "(").replace(/%29/g, ")")
+                  }
+                  function a(e) {
+                      return encodeURIComponent(e).replace(/[()]/g, function(e) {
+                          return "%" + e.charCodeAt(0).toString(16)
+                      })
+                  }
+                  function be(e, t) {
+                      return !!t.website_uuid && t.website_uuid !== e
+                  }
+                  function ve(e) {
+                      return !!e && "Invalid Date" !== new Date(e) && !isNaN(new Date(e))
+                  }
+                  function u(e) {
+                      return "number" == typeof e && e % 1 == 0
+                  }
+                  function _e(e) {
+                      return "string" == typeof e || e instanceof String
+                  }
+                  function d(e, t) {
+                      return !(!ve(e) || !u(t)) && ((e = new Date(e)).setTime(e.getTime() + 24 * t * 60 * 60 * 1e3),
+                      e.toUTCString())
+                  }
+                  function ke(e, t, n, o, i) {
+                      if (Be(qe, Je),
+                      !(e || t || p(S)))
+                          return h(o),
+                          null;
+                      if (t && !e) {
+                          var r = l(t.consents_approved, window.cicl);
+                          Se(i, t, d(t.timestamp, r), A, x);
+                          try {
+                              C()
+                          } catch (e) {
+                              return !1
+                          }
+                      } else
+                          e && g(T, e);
+                      Ee(e, t, n, o, i)
+                  }
+                  function Ie() {
+                      var e, t;
+                      return !(!window.cookieInformationCustomConfig || (e = window.cookieInformationCustomConfig.hasOwnProperty("acceptFrequency"),
+                      t = window.cookieInformationCustomConfig.hasOwnProperty("declineFrequency"),
+                      !e && !t) || (e && !t || !e && t ? (console.warn("CookieInformation: you have incorrectly defined your custom config. Some of the frequencies properties associated with showing banner are missing."),
+                      1) : (e = window.cookieInformationCustomConfig.acceptFrequency,
+                      t = window.cookieInformationCustomConfig.declineFrequency,
+                      (!u(e) || !u(t)) && (console.warn("CookieInformation: frequency properties associated with showing banner have to be integers."),
+                      1))))
+                  }
+                  function l(e, t) {
+                      e = e.length === t.length && (!(2 < arguments.length && void 0 !== arguments[2]) || arguments[2]);
+                      return Ie() ? e ? window.cookieInformationCustomConfig.acceptFrequency : window.cookieInformationCustomConfig.declineFrequency : e ? 365 : 14
+                  }
+                  function g(e, t) {
+                      var n = l(t.consents_approved, window.cicl);
+                      fe(e, t, d(t.timestamp, n));
+                      try {
+                          C()
+                      } catch (e) {
+                          return !1
+                      }
+                  }
+                  function Ee(e, t, n, o, i) {
+                      var r = p(S);
+                      if (!(e || t || r))
+                          return h(o),
+                          null;
+                      if (t && !e)
+                          if (void 0 === t.website_uuid) {
+                              s(T, c(location.host)),
+                              s(T, "." + location.host);
+                              var a = p(T);
+                              (t = JSON.parse(a) || t).website_uuid = n || "",
+                              g(T, t)
+                          } else if (be(n, t))
+                              s(T, c(location.host)),
+                              s(T, "." + location.host),
+                              s(T),
+                              s(S),
+                              Oe(i, A),
+                              window.cicc = w(window.cicl),
+                              m(),
+                              h(o);
+                          else
+                              try {
+                                  C()
+                              } catch (e) {
+                                  return !1
+                              }
+                      else if (e)
+                          if (void 0 === e.website_uuid) {
+                              e.website_uuid = n || "";
+                              a = l(e.consents_approved, window.cicl);
+                              Se(i, e, d(e.timestamp, a), A, x),
+                              g(T, e)
+                          } else if (be(n, e))
+                              s(T, c(location.host)),
+                              s(T, "." + location.host),
+                              s(T),
+                              s(S),
+                              Oe(i, A),
+                              window.cicc = w(window.cicl),
+                              m(),
+                              h(o);
+                          else {
+                              s(T, c(location.host)),
+                              s(T, "." + location.host);
+                              try {
+                                  C()
+                              } catch (e) {
+                                  return !1
+                              }
+                          }
+                      else if (r)
+                          if (p("cicsversion") === n && t)
+                              try {
+                                  C()
+                              } catch (e) {
+                                  return !1
+                              }
+                          else
+                              s(S),
+                              h(o);
+                      else
+                          try {
+                              C()
+                          } catch (e) {
+                              return !1
+                          }
+                  }
+                  function xe(e, t) {
+                      return !(!_e(e) || !_e(t)) && t + "_" + e
+                  }
+                  function Ae(e) {
+                      return e.startsWith("www.") ? e.replace("www.", "") : e
+                  }
+                  function Te() {
+                      B = !0;
+                      var e = document.getElementsByName(L)[0]
+                        , t = Ae(location.hostname);
+                      try {
+                          e.contentWindow.postMessage({
+                              type: "GET_COOKIE_CONTROL",
+                              domainName: t
+                          }, _.cdnUrl)
+                      } catch (e) {
+                          y({
+                              data: {
+                                  domainName: t,
+                                  type: "GET_COOKIE_CONTROL",
+                                  cookieConsent: {}
+                              },
+                              origin: _.cdnUrl
+                          })
+                      }
+                  }
+                  function Se(t, n, o, i, e) {
+                      var r = document.getElementsByName(L)[0]
+                        , i = {
+                          id: i,
+                          domains: e
+                      };
+                      if (B)
+                          try {
+                              r.contentWindow.postMessage({
+                                  type: "SAVE",
+                                  cookieName: t,
+                                  cookieConsent: n,
+                                  expirationTime: o,
+                                  website: i
+                              }, _.cdnUrl)
+                          } catch (e) {
+                              y({
+                                  data: {
+                                      cookieName: t,
+                                      type: "SAVE",
+                                      cookieConsent: n,
+                                      expirationTime: o,
+                                      website: i
+                                  },
+                                  origin: _.cdnUrl
+                              })
+                          }
+                  }
+                  function Oe(t, n) {
+                      var e = document.getElementsByName(L)[0];
+                      if (B)
+                          try {
+                              e.contentWindow.postMessage({
+                                  type: "DELETE",
+                                  cookieName: t,
+                                  websiteId: n
+                              }, _.cdnUrl)
+                          } catch (e) {
+                              y({
+                                  data: {
+                                      cookieName: t,
+                                      type: "DELETE",
+                                      websiteId: n
+                                  },
+                                  origin: _.cdnUrl
+                              })
+                          }
+                  }
+                  function y(e) {
+                      if (e.origin === _.cdnUrl) {
+                          var t = null
+                            , n = null;
+                          if ("GET" === e.data.type) {
+                              try {
+                                  t = e.data.cookieConsent,
+                                  n = JSON.parse(p(T))
+                              } catch (e) {
+                                  console.log("There was an error in parsing cookie value", e)
+                              }
+                              ke(t, n, M.websiteUuid, E, e.data.cookieName),
+                              e.data.cookieConsent ? f(e.data.cookieConsent) : f(n),
+                              b()
+                          } else
+                              "SAVE" !== e.data.type && "DELETE" !== e.data.type && "GET_COOKIE_CONTROL" === e.data.type && f(e.data.cookieConsent, !0)
+                      }
+                  }
+                  function Le() {
+                      return _.cdnUrl + "/" + _.cookieSharingWebpageFileName
+                  }
+                  function Ne(e) {
+                      if (B)
+                          try {
+                              var t = e
+                                , n = document.getElementsByName(L)[0];
+                              try {
+                                  n.contentWindow.postMessage({
+                                      type: "GET",
+                                      cookieName: t
+                                  }, _.cdnUrl)
+                              } catch (e) {
+                                  y({
+                                      data: {
+                                          cookieName: t,
+                                          type: "GET",
+                                          cookieConsent: {}
+                                      },
+                                      origin: _.cdnUrl
+                                  })
+                              }
+                          } catch (e) {
+                              console.log("Cookie Information: ", e)
+                          }
+                      else
+                          setTimeout(function() {
+                              Ne(e)
+                          }, 5)
+                  }
+                  function Be(e, t, n) {
+                      try {
+                          var o, i = document.getElementById(j), r = (i && i.remove(),
+                          document.createElement("div")), a = (r.innerHTML = e,
+                          r.style.display = "none",
+                          r.id = j,
+                          document.getElementsByTagName("body")[0]), c = document.createElement("script"), s = (c.setAttribute("type", "text/javascript"),
+                          c.textContent = t,
+                          re());
+                          return s && ((o = r.getElementsByTagName("style")[0]) && o.setAttribute("nonce", s),
+                          c.setAttribute("nonce", s)),
+                          r.appendChild(c),
+                          a.insertBefore(r, a.firstChild),
+                          !0
+                      } catch (e) {
+                          return console.log("Cookie Information: there was an error while trying to add template to website", e),
+                          !1
+                      }
+                  }
+                  function h(e) {
+                      try {
+                          document.getElementById(e).style.display = "block",
+                          window[I]()
+                      } catch (e) {
+                          return !1
+                      } finally {
+                          je(j)
+                      }
+                  }
+                  function C() {
+                      try {
+                          window[Ge]()
+                      } catch (e) {
+                          return !1
+                      } finally {
+                          je(j)
+                      }
+                  }
+                  function je(t) {
+                      setTimeout(function() {
+                          var e = document.getElementById(t);
+                          e && (e.style.display = "block")
+                      }, 0)
+                  }
+                  function Me(t) {
+                      try {
+                          return De.toASCII(t)
+                      } catch (e) {
+                          return t
+                      }
+                  }
+                  function b() {
+                      var e = new D("CookieInformationConsentGiven");
+                      window.dispatchEvent(e),
+                      G(window.CookieInformation.youtubeCategorySdk, window.CookieInformation.youtubeNotVisibleDescription, window.CookieInformation.youtubeBlockedCSSClassName),
+                      Z()
+                  }
+                  function Fe() {
+                      var e = document.getElementById(E);
+                      e && (e.style.display = "block",
+                      e.style.opacity = "1");
+                      try {
+                          window[I]()
+                      } catch (e) {
+                          return !1
+                      } finally {
+                          je(j)
+                      }
+                  }
+                  var v, _, Ue, De, Pe, k, I, Ge, We, E, x, A, T, S, Re, O, L, N, t, B, qe, Je, Ve, He, j, M;
+                  window.CookieInformation = window.CookieInformation || (v = Array,
+                  _ = n("./config"),
+                  Ue = n("./IABStub"),
+                  De = n("punycode"),
+                  Pe = n("@iabtcf/stub"),
+                  k = null,
+                  I = "showBannerMethod",
+                  Ge = "hideBannerMethod",
+                  x = [],
+                  A = E = We = "",
+                  T = "CookieInformationConsent",
+                  S = "euconsent-v2",
+                  Re = "cicc-template",
+                  O = "cookie_cat_necessary",
+                  N = !(L = "cookie-information-sharinglibrary-iframe"),
+                  t = window.Node || window.Element,
+                  Je = qe = "",
+                  Ve = 0,
+                  He = B = !1,
+                  j = "cookie-information-template-wrapper",
+                  t && t.prototype && null == t.prototype.lastElementChild && Object.defineProperty(t.prototype, "lastElementChild", {
+                      get: function() {
+                          for (var e, t = this.childNodes, n = t.length - 1; e = t[n--]; )
+                              if (1 === e.nodeType)
+                                  return e;
+                          return null
+                      }
+                  }),
+                  v.prototype.forEach || (v.prototype.forEach = function(e, t) {
+                      for (var n = 0, o = this.length; n < o; ++n)
+                          n in this && e.call(t, this[n], n, this)
+                  }
+                  ),
+                  String.prototype.startsWith || (String.prototype.startsWith = function(e, t) {
+                      return this.indexOf(e, t = t || 0) === t
+                  }
+                  ),
+                  "function" != typeof window.CustomEvent && (D.prototype = window.Event.prototype,
+                  window.CustomEvent = D),
+                  [Element.prototype, CharacterData.prototype, DocumentType.prototype].forEach(function(e) {
+                      e.hasOwnProperty("remove") || Object.defineProperty(e, "remove", {
+                          configurable: !0,
+                          enumerable: !0,
+                          writable: !0,
+                          value: function() {
+                              this.parentNode.removeChild(this)
+                          }
+                      })
+                  }),
+                  window.CookieInformationScriptLoaded || (window.cicc = {},
+                  window.cicc[O] = !0,
+                  window.cicl = [],
+                  te(),
+                  f(null, !0),
+                  V(L, Le(), "Cookie Information cookie sharing library", "display:none", H(), Te),
+                  document.body ? e() : window.attachEvent ? window.attachEvent("onload", e) : window.addEventListener("DOMContentLoaded", e, !1),
+                  window.CookieInformationScriptLoaded = !0),
+                  (M = {
+                      config: _,
+                      websiteUuid: "",
+                      cookieConsent: "",
+                      initializeBanner: function(e, t, n, o, i, r, a, c, s, u, d, l) {
+                          I = n,
+                          Ge = o,
+                          We = a,
+                          M.websiteUuid = u || "",
+                          A = d,
+                          N = !!l,
+                          qe = e,
+                          Je = t;
+                          n = document.createElement("div"),
+                          n.innerHTML = e,
+                          E = n.lastElementChild.id,
+                          Ie(),
+                          void 0 !== c ? x = c.split(",") : (x = [],
+                          console.log("CookieInformation: List of domains has not been passed correctly.")),
+                          void 0 !== s ? window.cicl = s.split(",") : (window.cicl = [],
+                          console.log("CookieInformation: List of categories has not been passed correctly. Only necessary cookies will be accepted")),
+                          o = i,
+                          a = r,
+                          window.CookieConsent = {},
+                          window.CookieConsent.show = Fe,
+                          window.CookieConsent.renew = Fe,
+                          window.CookieConsent.dialog = {},
+                          window.CookieConsent.dialog.submitConsent = function() {
+                              window.cicc = ye(window.cicl),
+                              M.submitConsent(),
+                              m()
+                          }
+                          ,
+                          window.CookieConsent.dialog.submitDecline = function() {
+                              window.cicc = w(window.cicl),
+                              M.submitConsent(),
+                              m()
+                          }
+                          ,
+                          window.CookieConsent.dialog.showDetailsText = o,
+                          window.CookieConsent.dialog.hideDetailsText = a,
+                          window.CookieConsentDialog = window.CookieConsent.dialog,
+                          l = xe(d, T);
+                          N ? Ne(l) : (Be(qe, Je),
+                          t = JSON.parse(p(T)),
+                          function e(t, n) {
+                              B ? Oe(t, n) : setTimeout(function() {
+                                  e(t, n)
+                              }, 5)
+                          }(l, d),
+                          f(t),
+                          Ee(!1, t, u, E, ""),
+                          b())
+                      },
+                      sendConsent: function(e) {
+                          var t = {}
+                            , n = _.mainEndpoint + _.apiPrefix + _.consentAcceptanceEndpoint;
+                          (t = window.XMLHttpRequest ? new XMLHttpRequest : new ActiveXObject("Microsoft.XMLHTTP")).open("POST", n, !0),
+                          t.setRequestHeader("Content-type", "application/json"),
+                          t.send(e)
+                      },
+                      injectCategoriesConsent: function(e, t) {
+                          var n = ne();
+                          null != n && (n.innerHTML = e,
+                          (e = document.createElement("script")).setAttribute("type", "text/javascript"),
+                          e.textContent = t,
+                          (t = re()) && e.setAttribute("nonce", t),
+                          n.appendChild(e)),
+                          m()
+                      },
+                      changeCategoryConsentDecision: function(e, t) {
+                          e !== O && -1 !== window.cicl.indexOf(e) && (pe(t) ? window.cicc[e] = t : window.cicc[e] ? window.cicc[e] = !window.cicc[e] : window.cicc[e] = !0)
+                      },
+                      submitConsent: function(e) {
+                          (r = {
+                              website_uuid: M.websiteUuid || "",
+                              timestamp: (new Date).toISOString(),
+                              consent_url: window.location.href,
+                              consent_website: We,
+                              consent_domain: window.location.hostname,
+                              user_uid: le() || de(),
+                              consents_approved: [],
+                              consents_denied: [],
+                              user_agent: navigator.userAgent
+                          }).consents_approved = ge(window.cicc),
+                          r.consents_denied = we(window.cicc);
+                          var t, n, o, i, r;
+                          ce() && (i = r,
+                          t = ae(window.CookieInformation.cmp.IABlanguagesCodesMapping),
+                          n = window.CookieInformation.cmp.getAllowedPurposesFromConsentCookie(),
+                          o = window.CookieInformation.cmp.getAllowedVendorsFromConsentCookie(),
+                          document.getElementById("coiConsentBannerIABColumn") && -1 !== i.consents_approved.indexOf("cookie_cat_marketing") && (o = (i = window.CookieInformation.cmp.getIABConsent()).vendorList.vendors.map(function(e) {
+                              return e.id
+                          }),
+                          n = i.vendorList.purposes.map(function(e) {
+                              return e.id
+                          })),
+                          window.CookieInformation.cmp.updateIABConsentString(_.cmpId, _.cmpVersion, t, n, o)),
+                          e || (i = l(r.consents_approved, window.cicl),
+                          e = d(r.timestamp, i)),
+                          N && Se(xe(A, T), r, e, A, x),
+                          fe(T, r, e),
+                          J(r),
+                          se() && W(r),
+                          window.CookieInformation.sendConsent(JSON.stringify(r));
+                          try {
+                              C()
+                          } catch (e) {
+                              return !1
+                          }
+                          m(),
+                          b()
+                      },
+                      getConsentGivenFor: function(e) {
+                          return window.cicc[e]
+                      },
+                      submitAllCategories: function() {
+                          window.cicc = ye(window.cicl),
+                          M.submitConsent(),
+                          m()
+                      },
+                      declineAllCategories: function() {
+                          window.cicc = w(window.cicl),
+                          M.submitConsent(),
+                          m()
+                      }
+                  })._getDataCulture = i,
+                  M._getConsentScriptUrl = ue,
+                  M._generateUuidv4 = de,
+                  M._getCookieValue = p,
+                  M._setCookie = fe,
+                  M._deleteCookie = s,
+                  M._isBoolean = pe,
+                  M._getVisitorId = le,
+                  M._getApprovedCategories = ge,
+                  M._getDeniedCategories = we,
+                  M._isArray = r,
+                  M._setAllCategoriesToApproved = ye,
+                  M._setAllCategoriesToDenied = w,
+                  M._setCheckboxesSelection = m,
+                  M._addExternalScript = z,
+                  M._getCookieInformationCheckboxes = me,
+                  M._initializeCMP = he,
+                  M._encodeURIComponentWithBrackets = a,
+                  M._decodeURIComponentWithBrackets = Ce,
+                  M._hasUuidChanged = be,
+                  M._isDate = ve,
+                  M._isInteger = u,
+                  M._calculateExpirationTimeOfTheCookie = d,
+                  M._getRootDomain = c,
+                  M._handleCookieSharing = ke,
+                  M._getCookieConsentNameForSpecificWebsite = xe,
+                  M._isString = _e,
+                  M._prepareFrame = V,
+                  M._getUrlForCookieSharingLibrary = Le,
+                  M._handlePushForConsentLogic = Ee,
+                  M._getDomainInCanonicalForm = Ae,
+                  M._addTemplateToDOM = Be,
+                  M._showBannerTemplate = h,
+                  M._hideBannerTemplate = C,
+                  M._getExpirationDays = l,
+                  M._validateCookieExpirationTimeConfig = Ie,
+                  M._submitConsentWithoutSendingInformationToAPI = g,
+                  M._setConsentForGTM = J,
+                  M._setConsentForTealiumTagManager = W,
+                  M._punycodeDomain = Me,
+                  M._instructVisitorWhichCategoryAgreementWillEnableVideos = G,
+                  M._isYoutubeVideo = P,
+                  M._fireEventOnConsentGiven = b,
+                  M._manageTaggedExternalElementsByConsents = Z,
+                  M._addIframeWithSdkImplemented = Y,
+                  M._addExternalImageWithSdkImplemented = K,
+                  M._addExternalScriptWithSdkImplemented = Q,
+                  M._getIABDataCulture = ae,
+                  M._isTCFEnabled = $,
+                  M._constructUrlToCMPLibrary = ee,
+                  M._constructUrlToTcfIframe = function() {
+                      return _.cookieInformationIABCdnUrl + "/" + _.cookieInformationTCFLibraryIframe
+                  }
+                  ,
+                  M._getMainLibraryScript = H,
+                  M._addConsentPopupToWebsiteAfterCmpIsLoaded = o,
+                  M._isGoogleConsentModeEnabled = R,
+                  M._setupGoogleConsentMode = q,
+                  M._loadCategoriesConsent = ie,
+                  M._loadAutoblockingModule = te,
+                  M._restartBanner = Fe,
+                  M.loadConsent = e,
+                  M)
+              }
+              , {
+                  "./IABStub": 3,
+                  "./config": 4,
+                  "./cookie-autoblocking-module-es3": 6,
+                  "@iabtcf/stub": 1,
+                  punycode: 2
+              }],
+              6: [function(e, t, n) {
+                  "use strict";
+                  var o = function(e, t) {
+                      if (Array.isArray(e))
+                          return e;
+                      if (Symbol.iterator in Object(e)) {
+                          var n = t
+                            , o = []
+                            , i = !0
+                            , t = !1
+                            , r = void 0;
+                          try {
+                              for (var a, c = e[Symbol.iterator](); !(i = (a = c.next()).done) && (o.push(a.value),
+                              !n || o.length !== n); i = !0)
+                                  ;
+                          } catch (e) {
+                              t = !0,
+                              r = e
+                          } finally {
+                              try {
+                                  !i && c.return && c.return()
+                              } finally {
+                                  if (t)
+                                      throw r
+                              }
+                          }
+                          return o
+                      }
+                      throw new TypeError("Invalid attempt to destructure non-iterable instance")
+                  }
+                    , i = e("./config")
+                    , r = Object.getOwnPropertyDescriptor(Document.prototype, "cookie")
+                    , a = (r.set = r.set.bind(document),
+                  r.get = r.get.bind(document),
+                  {
+                      cookiesList: null,
+                      cookiesQueue: []
+                  });
+                  function c() {
+                      "function" == typeof Object.defineProperty ? Object.defineProperty(document, "cookie", {
+                          get: function() {
+                              return r.get()
+                          },
+                          set: function(e) {
+                              u(e)
+                          },
+                          configurable: !0
+                      }) : document.__defineSetter__("cookie", u)
+                  }
+                  function s() {
+                      "function" == typeof Object.defineProperty ? Object.defineProperty(document, "cookie", {
+                          get: function() {
+                              return r.get()
+                          },
+                          set: function(e) {
+                              r.set(e)
+                          },
+                          configurable: !0
+                      }) : document.__defineSetter__("cookie", function(e) {
+                          return r.set(e)
+                      })
+                  }
+                  function u(e) {
+                      a.cookiesQueue.push(e),
+                      null !== a.cookiesList && m(e)
+                  }
+                  function d() {
+                      a.cookiesQueue.forEach(function(e) {
+                          m(e)
+                      })
+                  }
+                  function l() {
+                      a.cookiesQueue.forEach(function(e) {
+                          document.cookie = e
+                      }),
+                      a.cookiesQueue.length = 0
+                  }
+                  function f() {
+                      s(),
+                      l()
+                  }
+                  function p(e) {
+                      var n = C(e)
+                        , o = window.location.hostname;
+                      return a.cookiesList.filter(function(e) {
+                          var t = e.name
+                            , e = e.domain;
+                          return t === n.name && e === (n.domain || o)
+                      })[0] || {
+                          name: n.name,
+                          ignore: !0
+                      }
+                  }
+                  function m(e) {
+                      var t = p(e)
+                        , n = t.category
+                        , t = t.ignore;
+                      window.cicc[n] || t ? r.set(e) : w(e)
+                  }
+                  function w(e) {
+                      e = C(e),
+                      e.expires = "Thu, 01 Jan 1970 00:00:01 GMT",
+                      delete e["max-age"],
+                      e = b(e);
+                      r.set(e)
+                  }
+                  function g() {
+                      window.addEventListener("CookieInformationConsentGiven", y)
+                  }
+                  function y() {
+                      null !== a.cookiesList && d()
+                  }
+                  function h(e) {
+                      var e = v(e)
+                        , n = void 0;
+                      (n = window.XMLHttpRequest ? new XMLHttpRequest : new ActiveXObject("Microsoft.XMLHTTP")).onreadystatechange = function() {
+                          var e, t;
+                          a.cookiesList = [],
+                          4 === n.readyState && (200 === n.status && (e = (t = JSON.parse(n.responseText)).cookies,
+                          (void 0 === (t = t.metadata) ? {} : t).autoblocking_enabled) ? (a.cookiesList = void 0 === e ? [] : e,
+                          d) : f)()
+                      }
+                      ,
+                      n.open("GET", e, !0),
+                      n.send(null)
+                  }
+                  function C(e) {
+                      var e = e.split(";").map(function(e) {
+                          return e.split("=").map(function(e) {
+                              return e.trim()
+                          })
+                      })
+                        , t = o(e[0], 2)
+                        , n = t[0]
+                        , t = t[1]
+                        , e = (e.shift(),
+                      e.reduce(function(e, t) {
+                          var t = o(t, 2)
+                            , n = t[0]
+                            , t = t[1];
+                          return e[n] = t,
+                          e
+                      }, {}));
+                      return Object.assign({
+                          name: n,
+                          value: t
+                      }, e)
+                  }
+                  function b(e) {
+                      var t = e.name
+                        , n = e.value
+                        , e = Object.assign({}, e)
+                        , t = (delete e.name,
+                      delete e.value,
+                      t + "=");
+                      return n && (t += "" + n),
+                      Object.keys(e).length && (t += ";"),
+                      t += Object.entries(e).reduce(function(e, t) {
+                          return e += t.join("=") + ";"
+                      }, "")
+                  }
+                  function v(e) {
+                      return "localhost" === window.location.hostname ? "http://localhost:8085/dist/cabl.json" : i.cdnUrl + "/cookie-data/" + e + "/cabl.json"
+                  }
+                  t.exports = {
+                      initializeCookieAutoBlocking: function(e) {
+                          c(),
+                          h(e),
+                          g()
+                      },
+                      _replaceNativeCookie: c,
+                      _restoreNativeCookie: s,
+                      _customSetCookie: u,
+                      _manageCookiesQueue: d,
+                      _clearCookiesQueue: l,
+                      _matchCookie: p,
+                      _manageCookie: m,
+                      _removeCookie: w,
+                      _setWaitForConsentListener: g,
+                      _waitForConsentCallback: y,
+                      _getCookiesList: h,
+                      _serializeCookie: C,
+                      _deserializeCookie: b,
+                      _getCookiesListUrl: v,
+                      _disableCookiesAutoblocking: f,
+                      _state: a
+                  }
+              }
+              , {
+                  "./config": 4
+              }]
+          }, {}, [5]);
+          
           `,
           }}
         />
